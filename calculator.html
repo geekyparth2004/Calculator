@@ -13,7 +13,7 @@
                 <input type="text" id="result" disabled>
             </div>
             <div>
-                <input class="t-button" type="button" value="AC" onclick="clearResult()"">
+                <input class="t-button" type="button" value="AC" onclick="clearResult()">
                 <input class="t-button" type="button" value="DEL" onclick="delResult()">
                 <input class="t-button" type="button" value="%" onclick="appendToResult('%')">
                 <input class="r-button" type="button" value="/" onclick="appendToResult('/')">
@@ -57,8 +57,9 @@
             document.getElementById('result').value = '';
         }
 
-        function delResult(value){
-            document.getElementById('result'.toString(0,-1)).value = result;
+        function delResult(){
+            var result = document.getElementById('result').value;
+            document.getElementById('result').value = result.toString().slice(0,-1);
         }
     </script>
 
